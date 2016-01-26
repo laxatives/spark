@@ -2176,8 +2176,8 @@
               <include>org.eclipse.jetty:jetty-security</include>
               <include>org.eclipse.jetty:jetty-util</include>
               <include>org.eclipse.jetty:jetty-server</include>
-              <include>com.google.guava:guava</include>
               <include>com.fasterxml.jackson.core:jackson-databind</include>
+              <include>com.google.guava:guava</include>
             </includes>
           </artifactSet>
           <relocations>
@@ -2189,10 +2189,14 @@
               </includes>
             </relocation>
             <relocation>
+              <pattern>com.fasterxml.jackson.core</pattern>
+              <shadedPattern>org.spark-project.jackson</shadedPattern>
+            </relocation>
+            <relocation>
               <pattern>com.google.common</pattern>
               <shadedPattern>org.spark-project.guava</shadedPattern>
-            </relocation>
-          </relocations>
+          </relocation>
+        </relocations>
         </configuration>
         <executions>
           <execution>
